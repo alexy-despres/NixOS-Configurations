@@ -36,31 +36,6 @@ in {
           "$shiftMod, A, exec, "
           + lib.getExe (mkMenu [
             {
-              key = "a";
-              desc = "Proton Authenticator";
-              cmd = "env WEBKIT_DISABLE_COMPOSITING_MODE=1 ${pkgs.proton-authenticator}/bin/proton-authenticator";
-            }
-            {
-              key = "p";
-              desc = "Proton Pass";
-              cmd = "${pkgs.proton-pass}/bin/proton-pass";
-            }
-            {
-              key = "v";
-              desc = "Proton VPN";
-              cmd = "${pkgs.proton-vpn}/bin/protonvpn-app";
-            }
-            {
-              key = "c";
-              desc = "Proton Calendar";
-              cmd = "${config.programs.helium.package}/bin/helium 'https://calendar.proton.me/'";
-            }
-            {
-              key = "m";
-              desc = "Proton Mail";
-              cmd = "${config.programs.helium.package}/bin/helium 'https://mail.proton.me/'";
-            }
-            {
               key = "o";
               desc = "Obsidian";
               cmd = "${pkgs.obsidian}/bin/obsidian";
@@ -75,20 +50,10 @@ in {
               desc = "TickTick";
               cmd = "${pkgs.ticktick}/bin/ticktick";
             }
-            {
-              key = "b";
-              desc = "Helium";
-              cmd = "${config.programs.helium.package}/bin/helium";
-            }
-            {
-              key = "i";
-              desc = "Helium (Incognito)";
-              cmd = "${config.programs.helium.package}/bin/helium --incognito";
-            }
           ])
         )
 
-        "$mod,B, exec, uwsm app -- ${config.programs.helium.package}/bin/helium" # Browser
+        # "$mod,B, exec, uwsm app -- ${config.programs.helium.package}/bin/helium" # Browser
 
         # Power
         "$mod, X, global, caelestia:session" # Powermenu

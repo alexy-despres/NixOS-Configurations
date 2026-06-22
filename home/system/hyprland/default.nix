@@ -19,7 +19,6 @@ in {
     ./animations.nix
     ./bindings.nix
     ./polkitagent.nix
-    ./keyboard-backlight.nix # CHANGEME: This is for omen laptop only
   ];
 
   home.packages = with pkgs; [
@@ -124,8 +123,6 @@ in {
 
       windowrule = [
         "match:class .*, suppress_event maximize"
-        "match:class helium, suppress_event fullscreen"
-        "match:class helium, sync_fullscreen false"
 
         "match:class proton-authenticator, float on"
         "match:class proton-authenticator, center on"
