@@ -27,8 +27,7 @@
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
-    };h-work = import ./hosts/work/flake.nix args;
-          jack = import ./hosts/server/flake.nix args;
+    };
     caelestia-cli = {
       url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
