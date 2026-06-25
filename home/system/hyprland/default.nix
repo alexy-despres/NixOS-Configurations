@@ -13,7 +13,7 @@
   rounding = config.theme.rounding;
   blur = config.theme.blur;
   keyboardLayout = config.var.keyboardLayout;
-  background = "rgba(" + config.lib.stylix.colors.base00 + "EE)";
+  # background = "rgba(" + config.lib.stylix.colors.base00 + "EE)";
 in {
   imports = [
     ./animations.nix
@@ -92,7 +92,9 @@ in {
         gaps_out = gaps-out;
         border_size = border-size;
         layout = "master";
-        "col.inactive_border" = lib.mkForce background;
+        # "col.inactive_border" = lib.mkForce background;
+        "col.active_border" = lib.mkForce "rgba(c9a84cff) rgba(e8b84cff) 45deg"; # Gold gradient
+        "col.inactive_border" = lib.mkForce "rgba(665538ff) rgba(b89a4aff) 45deg"; # Muted gold gradient
       };
 
       decoration = {
