@@ -7,7 +7,7 @@
   options.theme = lib.mkOption {
     type = lib.types.attrs;
     default = {
-      rounding = 20;
+      rounding = 30;
       bar-rounding = 20 + 10;
       bar-thickness = 0;
       gaps-in = 8;

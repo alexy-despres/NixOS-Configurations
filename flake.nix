@@ -11,7 +11,6 @@
     stylix.url = "github:danth/stylix";
     nvf.url = "github:notashelf/nvf";
     notashelf-tuigreet.url = "github:NotAShelf/tuigreet";
-    nur-anotherhadi.url = "github:anotherhadi/nur-packages";
 
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
@@ -47,7 +46,6 @@
 
     pkgs = nixpkgs.legacyPackages.${system};
     pkgs-stable = nixpkgs-stable.legacyPackages.${system};
-    pkgs-nur-hadi = inputs.nur-anotherhadi.packages.${system};
 
     args = {
       inherit
@@ -56,7 +54,6 @@
         system
         pkgs
         pkgs-stable
-        pkgs-nur-hadi
         ;
     };
 

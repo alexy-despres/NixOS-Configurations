@@ -1,6 +1,6 @@
 {
   pkgs-stable,
-  pkgs-nur-hadi,
+  pkgs,
   ...
 }: {
   home.packages = with pkgs-stable; [
@@ -17,7 +17,7 @@
     # TUI
     caligula # User-friendly, lightweight TUI for disk imaging (ISO, USB BOOT)
     wikiman # Offline search engine for manual pages (arch wiki, tldr)
-    pkgs-nur-hadi.usbguard-tui # TUI for managing USBGuard rules
+    pkgs.ani-cli
 
     # CLI
     httpie # Command-line HTTP client, a user-friendly cURL replacement

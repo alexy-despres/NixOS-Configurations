@@ -1,8 +1,6 @@
 {
-  inputs,
   pkgs,
   pkgs-stable,
-  pkgs-nur-hadi,
   system,
   ...
 }: let

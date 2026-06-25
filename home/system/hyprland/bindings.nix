@@ -69,16 +69,17 @@ in {
 
         # Quick launch
         "$mod,RETURN, exec, uwsm app -- ${pkgs.ghostty}/bin/ghostty" # Ghostty (terminal)
-        "$mod,E, exec,  uwsm app -- ${pkgs.thunar}/bin/thunar" # Thunar
-        "$mod,D, exec,  uwsm app -- ${pkgs.discord}/bin/discord" # Discord
+        "$mod, E, exec,  uwsm app -- ${pkgs.thunar}/bin/thunar" # Thunar
+        "$mod, D, exec,  uwsm app -- ${pkgs.discord}/bin/discord" # Discord
         "$shiftMod, E, exec, pkill fuzzel || caelestia emoji -p" # Emoji picker
         "$mod, SPACE, global, caelestia:launcher" # Launcher
         "$mod, N, exec, caelestia shell drawers toggle sidebar" # Sidebar (Notifications, quick actions)
+        "$mod, W, exec, uwsm app -- zen-browser.desktop"
 
         # Windows
         "$mod,Q, killactive," # Close window
         "$mod,F, fullscreen" # Toggle Fullscreen
-        "$shiftMod,F, togglefloating," # Toggle Floating
+        "$shiftMod, F, togglefloating," # Toggle Floating
 
         # Focus Windows
         "$mod,H, movefocus, l" # Move focus left
@@ -87,10 +88,10 @@ in {
         "$mod,L, movefocus, r" # Move focus Right
 
         # For multiple monitors
-        "$shiftMod,J, layoutmsg, removemaster" # Remove from master
-        "$shiftMod,K, layoutmsg, addmaster" # Add to master
-        # "$shiftMod,H, focusmonitor, -1" # Focus previous monitor
-        # "$shiftMod,L, focusmonitor, 1" # Focus next monitor
+        "$shiftMod, J, layoutmsg, removemaster" # Remove from master
+        "$shiftMod, K, layoutmsg, addmaster" # Add to master
+        # "$shiftMod, H, focusmonitor, -1" # Focus previous monitor
+        # "$shiftMod, L, focusmonitor, 1" # Focus next monitor
 
         # Utilities
         "$shiftMod, SPACE, exec, caelestia shell gameMode toggle" # Toggle Focus/Game mode
@@ -103,7 +104,7 @@ in {
           i: let
             ws = i + 1;
           in [
-            "$mod,code:1${toString i}, workspace, ${toString ws}"
+            "$mod, code:1${toString i}, workspace, ${toString ws}"
             "$mod SHIFT,code:1${toString i}, movetoworkspace, ${toString ws}"
           ]
         )
@@ -112,8 +113,8 @@ in {
 
     # For floating windows
     bindm = [
-      "$mod,mouse:272, movewindow" # Move Window (mouse)
-      "$mod,R, resizewindow" # Resize Window (mouse)
+      "$mod, mouse:272, movewindow" # Move Window (mouse)
+      "$mod, R, resizewindow" # Resize Window (mouse)
     ];
 
     # Keyboard functions

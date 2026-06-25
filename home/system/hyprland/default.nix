@@ -148,8 +148,14 @@ in {
 
         touchpad = {
           natural_scroll = true;
-          clickfinger_behavior = true;
+          tap_button_map = "lrm"; # Left, Right, Middle mapping
+          tap-to-click = true; # Enable tapping
+          disable_while_typing = true; # Prevent accidental touches while typing
         };
+        # touchpad = {
+        #   natural_scroll = true;
+        #   clickfinger_behavior = true;
+        # };
       };
 
       ecosystem = {
