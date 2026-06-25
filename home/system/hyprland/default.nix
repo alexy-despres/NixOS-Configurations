@@ -83,7 +83,7 @@ in {
 
       cursor = {
         no_hardware_cursors = true;
-        default_monitor = "eDP-2";
+        default_monitor = "eDP-1";
       };
 
       general = {
@@ -123,14 +123,6 @@ in {
 
       windowrule = [
         "match:class .*, suppress_event maximize"
-
-        "match:class proton-authenticator, float on"
-        "match:class proton-authenticator, center on"
-        "match:class proton-authenticator, size 500 400"
-
-        "match:class protonvpn-app, float on"
-        "match:class protonvpn-app, center on"
-        "match:class protonvpn-app, size 500 400"
 
         "match:title run-bg, float on"
         "match:title run-bg, center on"

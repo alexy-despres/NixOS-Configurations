@@ -17,7 +17,7 @@
       blur = true;
       border-size = 2;
       animation-speed = "medium"; # "fast" | "medium" | "slow"
-      fetch = "none"; # "nerdfetch" | "neofetch" | "pfetch" | "none"
+      fetch = "pfetch"; # "nerdfetch" | "neofetch" | "pfetch" | "none"
     };
     description = "Theme configuration options";
   };

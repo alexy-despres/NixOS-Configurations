@@ -41,7 +41,7 @@ in {
         kbLayoutChanged = false;
       };
     };
-    dashboard.showOnHover = false;
+    dashboard.showOnHover = true;
     border = {
       rounding = bar-rounding;
       thickness = bar-thickness;

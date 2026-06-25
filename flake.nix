@@ -1,8 +1,6 @@
 {
-  # https://github.com/anotherhadi/nixy
   description = ''
-    Nixy simplifies and unifies the Hyprland ecosystem with a modular, easily customizable setup.
-    It provides a structured way to manage your system configuration and dotfiles with minimal effort.
+    My personal configurations for NixOS (Nixy fork)
   '';
 
   inputs = {
@@ -11,7 +9,6 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     stylix.url = "github:danth/stylix";
-    sops-nix.url = "github:Mic92/sops-nix";
     nvf.url = "github:notashelf/nvf";
     notashelf-tuigreet.url = "github:NotAShelf/tuigreet";
     nur-anotherhadi.url = "github:anotherhadi/nur-packages";
@@ -32,13 +29,13 @@
       url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Server
-    nixarr.url = "github:rasmus-kirk/nixarr";
-    default-creds.url = "github:anotherhadi/default-creds";
-    blog.url = "github:anotherhadi/blog";
-    awesome-wallpapers.url = "github:anotherhadi/awesome-wallpapers";
-    iknowyou.url = "github:anotherhadi/iknowyou";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
   };
 
   outputs = inputs @ {
@@ -47,23 +44,28 @@
     ...
   }: let
     system = "x86_64-linux";
+
     pkgs = nixpkgs.legacyPackages.${system};
+    pkgs-stable = nixpkgs-stable.legacyPackages.${system};
+    pkgs-nur-hadi = inputs.nur-anotherhadi.packages.${system};
+
     args = {
       inherit
         inputs
         nixpkgs
         system
         pkgs
+        pkgs-stable
+        pkgs-nur-hadi
         ;
-      pkgs-stable = nixpkgs-stable.legacyPackages.${system};
-      pkgs-nur-hadi = inputs.nur-anotherhadi.packages.${system};
     };
+
     merge = nixpkgs.lib.foldl nixpkgs.lib.recursiveUpdate {};
   in
     merge [
       (import ./home/programs/nvf/flake.nix args)
       (import ./home/programs/group/flake.nix args)
-      (import ./home/programs/nixy/flake.nix args)
+
       {
         formatter.${system} = pkgs.alejandra;
         nixosConfigurations = {

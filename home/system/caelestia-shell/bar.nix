@@ -1,7 +1,7 @@
 {
   programs.caelestia.settings.bar = {
     clock.showIcon = false;
-    popouts.activeWindow = false;
+    popouts.activeWindow = true;
     persistent = true;
     status = {
       showBattery = true;
@@ -9,7 +9,7 @@
       showLockStatus = false;
       showBluetooth = true;
       showAudio = true;
-      showKbLayout = false;
+      showKbLayout = true;
       showNetwork = true;
     };
     workspaces = {

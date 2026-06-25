@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }: let
   colors = config.lib.stylix.colors;
@@ -31,39 +32,17 @@ in {
 
     bind =
       [
-        # Applications
-        (
-          "$shiftMod, A, exec, "
-          + lib.getExe (mkMenu [
-            {
-              key = "o";
-              desc = "Obsidian";
-              cmd = "${pkgs.obsidian}/bin/obsidian";
-            }
-            {
-              key = "s";
-              desc = "Signal";
-              cmd = "${pkgs.signal-desktop}/bin/signal-desktop";
-            }
-            {
-              key = "t";
-              desc = "TickTick";
-              cmd = "${pkgs.ticktick}/bin/ticktick";
-            }
-          ])
-        )
-
-        # "$mod,B, exec, uwsm app -- ${config.programs.helium.package}/bin/helium" # Browser
-
-        # Power
         "$mod, X, global, caelestia:session" # Powermenu
+        "$shiftMod, L, global, caelestia:lock" # Lock
+
+        # Quick menu
         (
           "$shiftMod, X, exec, "
           + lib.getExe (mkMenu [
             {
-              key = "l";
-              desc = "Lock";
-              cmd = "hyprctl dispatch global caelestia:lock";
+              key = "q";
+              desc = "quit";
+              cmd = "echo quitting..."; # Doesn't actually do anything
             }
             {
               key = "s";
@@ -85,21 +64,16 @@ in {
               desc = "Nightshift";
               cmd = "nightshift-toggle";
             }
-            {
-              key = "c";
-              desc = "Restart caelestia";
-              cmd = "hyprctl dispatch exec 'caelestia-shell kill | sleep 1 | caelestia-shell'";
-            }
           ])
         )
 
         # Quick launch
         "$mod,RETURN, exec, uwsm app -- ${pkgs.ghostty}/bin/ghostty" # Ghostty (terminal)
         "$mod,E, exec,  uwsm app -- ${pkgs.thunar}/bin/thunar" # Thunar
+        "$mod,D, exec,  uwsm app -- ${pkgs.discord}/bin/discord" # Discord
         "$shiftMod, E, exec, pkill fuzzel || caelestia emoji -p" # Emoji picker
         "$mod, SPACE, global, caelestia:launcher" # Launcher
         "$mod, N, exec, caelestia shell drawers toggle sidebar" # Sidebar (Notifications, quick actions)
-        "$mod, D, exec, caelestia shell drawers toggle dashboard" # Dashboard
 
         # Windows
         "$mod,Q, killactive," # Close window
@@ -111,17 +85,19 @@ in {
         "$mod,J, movefocus, d" # Move focus Down
         "$mod,K, movefocus, u" # Move focus Up
         "$mod,L, movefocus, r" # Move focus Right
-        "$shiftMod,H, focusmonitor, -1" # Focus previous monitor
+
+        # For multiple monitors
         "$shiftMod,J, layoutmsg, removemaster" # Remove from master
         "$shiftMod,K, layoutmsg, addmaster" # Add to master
-        "$shiftMod,L, focusmonitor, 1" # Focus next monitor
+        # "$shiftMod,H, focusmonitor, -1" # Focus previous monitor
+        # "$shiftMod,L, focusmonitor, 1" # Focus next monitor
 
         # Utilities
         "$shiftMod, SPACE, exec, caelestia shell gameMode toggle" # Toggle Focus/Game mode
         "$shiftMod, S, global, caelestia:screenshotFreeze" # Capture region (freeze)
-        ", Print, global, caelestia:screenshotFreeze" # Capture region (freeze)
         "$shiftMod+Alt, S, global, caelestia:screenshot" # Capture region
       ]
+      # Move/Change workspaces
       ++ (builtins.concatLists (
         builtins.genList (
           i: let
@@ -134,11 +110,13 @@ in {
         9
       ));
 
+    # For floating windows
     bindm = [
       "$mod,mouse:272, movewindow" # Move Window (mouse)
       "$mod,R, resizewindow" # Resize Window (mouse)
     ];
 
+    # Keyboard functions
     bindl = [
       # Brightness
       ", XF86MonBrightnessUp, global, caelestia:brightnessUp"

@@ -19,7 +19,7 @@
     extraLocale = "fr_CA.UTF-8";
 
     git = {
-      username = "AlexyDespres";
+      username = "alexy-despres";
       email = "alexydespres.dev@gmail.com";
     };
 
