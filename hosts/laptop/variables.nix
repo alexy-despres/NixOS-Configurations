@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ../../themes/nixy.nix # Theme chosen
+    ../../themes/horizon.nix # Theme chosen
   ];
 
   config.var = {
