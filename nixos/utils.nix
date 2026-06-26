@@ -101,6 +101,7 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
+    ripgrep
     fd
     bc
     gcc

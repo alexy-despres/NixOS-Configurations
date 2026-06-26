@@ -11,7 +11,7 @@
     ./bar.nix
     ./launcher.nix
     ./appearance.nix
-    ./scheme.nix
+    ./background.nix
     ./swappy.nix
   ];
 
@@ -71,8 +71,7 @@
   wayland.windowManager.hyprland.settings.exec-once = [
     "uwsm app -- caelestia resizer -d"
     "uwsm app -- caelestia shell -d"
-    "caelestia scheme set -n onedark"
-    "caelestia scheme set -n custom"
+    "caelestia scheme set -n gruvbox -f soft -v tonalspot"
   ];
 
   # shell.json is managed by home-manager (read-only symlink) but caelestia
