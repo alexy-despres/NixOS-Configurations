@@ -9,7 +9,7 @@
     ../../nixos/intel-graphics.nix
     ../../nixos/nix.nix
     ../../nixos/nvidia.nix
-    ../../nixos/systemd-boot.nix
+    ../../nixos/boot.nix
     ../../nixos/tuigreet.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix

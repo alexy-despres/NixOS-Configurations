@@ -1,13 +1,22 @@
 # Systemd-boot configuration for NixOS
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   boot = {
     bootspec.enable = true;
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot = {
-        enable = true;
+        enable = false;
         consoleMode = "auto";
         configurationLimit = 8;
+      };
+      grub = {
+        enable = true;
+        efiSupport = true;
+        device = "nodev";
       };
     };
     tmp.cleanOnBoot = true;
@@ -25,15 +34,15 @@
     consoleLogLevel = 0;
     initrd.verbose = false;
 
-    # plymouth = {
-    #   enable = true;
-    #   theme = lib.mkForce "cuts_alt";
-    #   themePackages = with pkgs; [
-    #     (adi1090x-plymouth-themes.override {
-    #       selected_themes = ["cuts_alt"];
-    #     })
-    #   ];
-    # };
+    plymouth = {
+      enable = true;
+      theme = lib.mkForce "cuts_alt";
+      themePackages = with pkgs; [
+        (adi1090x-plymouth-themes.override {
+          selected_themes = ["cuts_alt"];
+        })
+      ];
+    };
   };
 
   # To avoid systemd services hanging on shutdown

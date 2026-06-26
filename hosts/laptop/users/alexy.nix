@@ -20,11 +20,11 @@
     ../../../home/programs/zen-browser # Browser
 
     # Desktop environment
-    ../../../home/system/hyprland # Window manager
-    ../../../home/system/caelestia-shell # Caelestia shell
-    ../../../home/system/hyprpaper # Wallpaper
-    ../../../home/system/mime
-    ../../../home/system/udiskie # Auto mount drives
+    ../../../home/desktop/hyprland # Window manager
+    ../../../home/desktop/caelestia-shell # Caelestia shell
+    ../../../home/desktop/hyprpaper # Wallpaper
+    ../../../home/desktop/mime
+    ../../../home/desktop/udiskie # Auto mount drives
 
     ../variables.nix
   ];
@@ -35,7 +35,7 @@
     homeDirectory = "/home/" + config.var.username;
 
     file.".face" = {
-      source = ../profile_picture.png;
+      source = ../profile-picture.jpg;
     };
 
     sessionVariables = {
