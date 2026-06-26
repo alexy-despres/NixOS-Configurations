@@ -129,6 +129,9 @@ in {
         "match:title run-bg, float on"
         "match:title run-bg, center on"
         "match:title run-bg, size 700 80"
+
+        # Special workspaces
+        "workspace special:communication, match:class discord"
       ];
 
       misc = {

@@ -35,13 +35,31 @@
       enable = true;
       settings.theme = {
         enableTerm = false;
-        enableDiscord = false;
+        enableDiscord = true;
         enableSpicetify = false;
         enableBtop = false;
         enableCava = false;
         enableHypr = false;
         enableGtk = false;
         enableQt = false;
+      };
+      settings.toggles = {
+        communication = {
+          discord = {
+            enable = true;
+            match = [
+              {class = "discord";}
+            ];
+            command = ["discord"];
+            move = true;
+          };
+          whatsapp = {
+            enable = false;
+          };
+          signal = {
+            enable = false;
+          };
+        };
       };
     };
   };

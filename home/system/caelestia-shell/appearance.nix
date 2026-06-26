@@ -16,8 +16,8 @@ in {
     appearance = {
       transparency = {
         enabled = true;
-        base = config.theme.active-opacity;
-        layers = config.theme.inactive-opacity;
+        base = 0.75;
+        layers = 0.6;
       };
       font.family = {
         material = "Material Symbols Rounded";
