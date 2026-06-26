@@ -60,6 +60,30 @@
             enable = false;
           };
         };
+        sysmon.btop = {
+          enable = true;
+          match = [
+            {
+              class = "btop";
+              title = "btop";
+              workspace = {
+                name = "special:sysmon";
+              };
+            }
+          ];
+          command = ["ghostty" "-e" "btop"];
+        };
+        music = {
+          spotify = {
+            enable = true;
+            match = [
+              {class = "spotify";}
+              {initialTitle = "Spotify";}
+            ];
+            command = ["spotify"];
+            move = true;
+          };
+        };
       };
     };
   };

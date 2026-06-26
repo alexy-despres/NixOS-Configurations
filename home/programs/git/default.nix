@@ -5,6 +5,7 @@
 in {
   programs.git = {
     enable = true;
+
     ignores = [
       ".cache/"
       ".DS_Store"
@@ -18,6 +19,13 @@ in {
       "result-*"
     ];
     settings = {
+      filter.lfs = {
+        clean = "git-lfs clean -- %f";
+        smudge = "git-lfs smudge -- %f";
+        process = "git-lfs filter-process";
+        required = true;
+      };
+
       user.name = username;
       user.email = email;
       init.defaultBranch = "main";

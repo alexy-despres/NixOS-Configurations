@@ -70,14 +70,14 @@ in {
         # Quick launch
         "$mod,RETURN, exec, uwsm app -- ${pkgs.ghostty}/bin/ghostty" # Ghostty (terminal)
         "$mod, E, exec,  uwsm app -- ${pkgs.thunar}/bin/thunar" # Thunar
-        # "$mod, D, exec,  uwsm app -- ${pkgs.discord}/bin/discord" # Discord
         "$shiftMod, E, exec, pkill fuzzel || caelestia emoji -p" # Emoji picker
         "$mod, SPACE, global, caelestia:launcher" # Launcher
         "$mod, N, exec, caelestia shell drawers toggle sidebar" # Sidebar (Notifications, quick actions)
-        "$mod, W, exec, uwsm app -- zen-browser.desktop"
-
+        "$mod,W, exec, uwsm app -- zen-beta"
         # Special workspaces
-        "$mod, D, exec, caelestia toggle communication"
+        "$mod, D, exec, caelestia toggle communication" # Discord
+        "CONTROL SHIFT, ESCAPE, exec, caelestia toggle sysmon" # Btop
+        "$mod, M, exec, caelestia toggle music" # Spotify
 
         # Windows
         "$mod,Q, killactive," # Close window

@@ -40,13 +40,6 @@
       };
 
       containersForce = true; # Delete containers not declared here
-      containers = {
-        Work = {
-          color = "blue";
-          icon = "briefcase";
-          id = 1;
-        };
-      };
 
       spacesForce = true; # Delete spaces not declared here
       spaces = {
