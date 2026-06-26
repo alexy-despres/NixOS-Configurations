@@ -44,12 +44,18 @@
         enableQt = false;
       };
       settings.toggles = {
+        github = {
+          github-desktop = {
+            enable = true;
+            match = [{class = "github";}];
+            command = ["github-desktop"];
+            move = true;
+          };
+        };
         communication = {
           discord = {
             enable = true;
-            match = [
-              {class = "discord";}
-            ];
+            match = [{class = "discord";}];
             command = ["discord"];
             move = true;
           };
@@ -66,12 +72,11 @@
             {
               class = "btop";
               title = "btop";
-              workspace = {
-                name = "special:sysmon";
-              };
+              workspace.name = "special:sysmon";
             }
           ];
           command = ["ghostty" "-e" "btop"];
+          move = true;
         };
         music = {
           spotify = {
