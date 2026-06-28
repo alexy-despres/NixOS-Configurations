@@ -5,7 +5,7 @@
     desktopClock = {
       enabled = true;
       scale = 1.6;
-      position = "top-right";
+      position = "bottom-right";
       invertColors = false;
       background = {
         enabled = false;

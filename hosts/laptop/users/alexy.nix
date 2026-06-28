@@ -22,7 +22,8 @@
     # Desktop environment
     ../../../home/desktop/hyprland # Window manager
     ../../../home/desktop/caelestia-shell # Caelestia shell
-    ../../../home/desktop/hyprpaper # Wallpaper
+    ../../../home/desktop/mpvpaper # Live wallpaper
+    # ../../../home/desktop/hyprpaper # Wallpaper
     ../../../home/desktop/mime
     ../../../home/desktop/udiskie # Auto mount drives
 

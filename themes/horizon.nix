@@ -4,10 +4,11 @@
   config,
   ...
 }: let
+  # For hyprpaper
   wallpaper-src = pkgs.fetchFromGitHub {
     owner = "mylinuxforwork";
     repo = "wallpaper";
-    rev = "c2daf5305943861099a950fc370be48007a1a31c"; # or use a specific commit hash for reproducibility
+    rev = "c2daf5305943861099a950fc370be48007a1a31c";
     sha256 = "sha256-a3GwidRDy8Ke2V5EHwHEZr1smSgNG3N70faZ2lCrmnw=";
   };
 in {
@@ -25,6 +26,8 @@ in {
       border-size = 2;
       animation-speed = "medium"; # "fast" | "medium" | "slow"
       fetch = "pfetch"; # "nerdfetch" | "neofetch" | "pfetch" | "none"
+      # wallpaper = "https://youtu.be/yTZSTHmmO6w?si=ijKkjnxZHPMeZBqY"; # For mpvpaper
+      wallpaper = "/home/alexy/Pictures/Wallpapers/space.webm"; # For mpvpaper
     };
     description = "Theme configuration options";
   };
@@ -82,6 +85,6 @@ in {
 
     polarity = "dark";
 
-    image = "${wallpaper-src}/amber-island.jpg";
+    image = "${wallpaper-src}/amber-island.jpg"; # For hyprpaper
   };
 }

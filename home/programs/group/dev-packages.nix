@@ -14,4 +14,5 @@
   jq
   nix-prefetch-github
   rsync
+  home-manager
 ])
