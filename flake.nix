@@ -57,8 +57,9 @@
         ;
     };
   in {
-    formatter.${system} = pkgs.alejandra;
+    formatter.${system} = pkgs.alejandra; # Auto formatting
     nixosConfigurations = {
+      # Import all hosts
       laptop = import ./hosts/laptop/flake.nix args;
     };
   };

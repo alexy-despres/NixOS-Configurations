@@ -28,22 +28,22 @@
 
     # See https://tinted-theming.github.io/tinted-gallery/ for more schemes
     base16Scheme = {
-      base00 = "0A0A0C"; # Default Background
-      base01 = "110F12"; # Lighter Background (Used for status bars, line number and folding marks)
-      base02 = "2D2A36"; # Selection Background
-      base03 = "514D63"; # Comments, Invisibles, Line Highlighting
-      base04 = "8E8AA0"; # Dark Foreground (Used for status bars)
-      base05 = "C2BED6"; # Default Foreground, Caret, Delimiters, Operators
-      base06 = "D8D5EA"; # Light Foreground (Not often used)
-      base07 = "EAE7F7"; # Light Background (Not often used)
-      base08 = "E07080"; # Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted
-      base09 = "D49070"; # Integers, Boolean, Constants, XML Attributes, Markup Link Url
-      base0A = "C4B060"; # Classes, Markup Bold, Search Text Background
-      base0B = "80B880"; # Strings, Inherited Class, Markup Code, Diff Inserted
-      base0C = "70B8C0"; # Support, Regular Expressions, Escape Characters, Markup Quotes
-      base0D = "9E97F8"; # Functions, Methods, Attribute IDs, Headings, Accent color
-      base0E = "C090E8"; # Keywords, Storage, Selector, Markup Italic, Diff Changed
-      base0F = "D080A0"; # Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
+      base00 = "111111"; # darkest bg
+      base01 = "1b1b1b"; # dark bg
+      base02 = "262626"; # dark bg selected
+      base03 = "777777"; # comments / muted
+      base04 = "bdae93"; # light bg
+      base05 = "ddc7a1"; # default fg
+      base06 = "ebdbb2"; # light fg
+      base07 = "fbf1c7"; # lightest fg
+      base08 = "ea6962"; # red
+      base09 = "e78a4e"; # orange
+      base0A = "d8a657"; # yellow
+      base0B = "a9b665"; # green
+      base0C = "89b482"; # aqua/cyan
+      base0D = "7daea3"; # blue
+      base0E = "d3869b"; # purple/pink
+      base0F = "bd6f3e"; # brown/orange alt
     };
 
     cursor = {

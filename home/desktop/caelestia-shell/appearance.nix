@@ -11,7 +11,7 @@ in {
   ];
 
   programs.caelestia.settings = {
-    paths.sessionGif = ./session-gif-hacker-cat.gif;
+    paths.sessionGif = ./session-gif.gif;
     appearance = {
       transparency = {
         enabled = true;

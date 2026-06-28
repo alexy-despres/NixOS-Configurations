@@ -11,4 +11,6 @@
     portalPackage =
       inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
+
+  security.pam.services.hyprlock = {}; # Needed for hyprlock to perform authentication
 }

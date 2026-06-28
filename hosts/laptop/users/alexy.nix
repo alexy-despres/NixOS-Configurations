@@ -23,6 +23,7 @@
     # Desktop environment
     ../../../home/desktop/hyprland # Window manager
     ../../../home/desktop/caelestia-shell # Caelestia shell
+    ../../../home/desktop/hyprlock
     ../../../home/desktop/mpvpaper # Live wallpaper
     # ../../../home/desktop/hyprpaper # Static wallpaper
     ../../../home/desktop/mime

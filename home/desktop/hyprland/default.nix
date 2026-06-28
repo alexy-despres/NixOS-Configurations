@@ -93,8 +93,9 @@ in {
         border_size = border-size;
         layout = "master";
         # "col.inactive_border" = lib.mkForce background;
-        "col.active_border" = lib.mkForce "rgba(c9a84cff) rgba(e8b84cff) 45deg"; # Gold gradient
-        "col.inactive_border" = lib.mkForce "rgba(665538ff) rgba(b89a4aff) 45deg"; # Muted gold gradient
+        "col.active_border" = lib.mkForce "rgba(b88558ff) rgba(ffb878ff) 45deg"; # Gold gradient
+        # "col.inactive_border" = lib.mkForce "rgba(665538ff) (b89a4aff) 45deg"; # Muted gold gradient
+        "col.inactive_border" = lib.mkForce "rgba(2a1500ff) rgba(3d2000ff) 45deg";
       };
 
       decoration = {

@@ -17,7 +17,7 @@
     # TUI
     caligula # User-friendly, lightweight TUI for disk imaging (ISO, USB BOOT)
     wikiman # Offline search engine for manual pages (arch wiki, tldr)
-    pkgs.ani-cli
+    pkgs.ani-cli # Search/watch animes directly from the terminal (needs a video player)
 
     # CLI
     httpie # Command-line HTTP client, a user-friendly cURL replacement
