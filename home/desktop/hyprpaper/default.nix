@@ -1,4 +1,3 @@
-# Hyprpaper is used to set the wallpaper on the system
 {lib, ...}: {
   # The wallpaper is set by stylix
   services.hyprpaper = {

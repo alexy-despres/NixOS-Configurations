@@ -2,6 +2,7 @@
   imports = [
     # Programs
     ../../../home/programs/ghostty # Terminal
+    ../../../home/programs/kitty # Other terminal
 
     ../../../home/programs/group/basic-apps.nix # Basic stuff
     ../../../home/programs/group/dev.nix # Dev stuff
@@ -23,7 +24,7 @@
     ../../../home/desktop/hyprland # Window manager
     ../../../home/desktop/caelestia-shell # Caelestia shell
     ../../../home/desktop/mpvpaper # Live wallpaper
-    # ../../../home/desktop/hyprpaper # Wallpaper
+    # ../../../home/desktop/hyprpaper # Static wallpaper
     ../../../home/desktop/mime
     ../../../home/desktop/udiskie # Auto mount drives
 

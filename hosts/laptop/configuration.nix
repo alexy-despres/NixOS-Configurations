@@ -10,6 +10,7 @@
     ../../nixos/nix.nix
     ../../nixos/nvidia.nix
     ../../nixos/boot.nix
+    ../../nixos/docker.nix
     ../../nixos/tuigreet.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
