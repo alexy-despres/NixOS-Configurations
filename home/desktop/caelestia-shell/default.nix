@@ -89,6 +89,14 @@
             move = true;
           };
         };
+        notes = {
+          obsidian = {
+            enable = true;
+            match = [{class = "notes";}];
+            command = ["obsidian"];
+            move = true;
+          };
+        };
       };
     };
   };

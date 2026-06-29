@@ -13,6 +13,7 @@
     resources # Ressource monitor
     onlyoffice-desktopeditors # Office suite
     librewolf # Backup browser
+    localsend # Send files to another device on the same network
 
     # TUI
     caligula # User-friendly, lightweight TUI for disk imaging (ISO, USB BOOT)

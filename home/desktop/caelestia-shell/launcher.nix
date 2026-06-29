@@ -182,7 +182,8 @@
         wallpapers = false;
       };
       showOnHover = false;
-      hiddenApps = [];
+      hiddenApps = ["btop"];
+      favouriteApps = ["zen-beta" "obsidian" "onlyoffice-desktopeditors" "virt-manager"];
     };
   };
 }

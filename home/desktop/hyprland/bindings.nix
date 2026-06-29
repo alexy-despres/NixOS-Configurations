@@ -76,11 +76,13 @@ in {
         "$mod, SPACE, global, caelestia:launcher" # Launcher
         "$mod, N, exec, caelestia shell drawers toggle sidebar" # Sidebar (Notifications, quick actions)
         "$mod, W, exec, uwsm app -- zen-beta"
+
         # Special workspaces
         "$mod, D, exec, caelestia toggle communication" # Discord
         "CONTROL SHIFT, ESCAPE, exec, caelestia toggle sysmon" # Btop
         "$mod, M, exec, caelestia toggle music" # Spotify
         "$mod, G, exec, caelestia toggle github" # Github
+        "$mod, O, exec, caelestia toggle notes" # Obsidian
 
         # Windows
         "$mod,Q, killactive," # Close window

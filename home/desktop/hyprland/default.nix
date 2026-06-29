@@ -136,6 +136,7 @@ in {
         "workspace special:sysmon, match:class btop"
         "workspace special:music, match:class spotify"
         "workspace special:github, match:class github"
+        "workspace special:obsidian, match:class notes"
       ];
 
       misc = {
