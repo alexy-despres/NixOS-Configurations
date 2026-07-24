@@ -16,6 +16,7 @@
     ../../nixos/users.nix
     ../../nixos/utils.nix
     ../../nixos/virtualization.nix
+    ../../nixos/firejail.nix
 
     ./hardware-configuration.nix
     ./variables.nix
