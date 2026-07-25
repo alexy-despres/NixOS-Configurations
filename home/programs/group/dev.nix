@@ -12,6 +12,7 @@
     nix-prefetch-github
     rsync
     home-manager
+    vscodium
     pkgs.claude-code
   ];
 }
