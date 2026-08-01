@@ -3,11 +3,11 @@ ui_scale = 1.1500000096857548
 
 [bar.default]
 background_opacity = 0.84999998100101948
-center = [ "audio_visualizer", "nix-monitor" ]
+center = [ "audio_visualizer" ]
 end = [ "media", "clipboard", "network", "bluetooth", "group:g1", "battery", "control-center", "session" ]
 padding = 15
 scale = 1.2500000111758709
-start = [ "launcher", "clock", "workspaces", "tray", "cat", "recorder", "special-workspaces" ]
+start = [ "launcher", "clock", "workspaces", "tray", "cat", "recorder", "nix-monitor" ]
 thickness = 33
 
     [bar.default.dead_zone.actions]
@@ -128,7 +128,6 @@ enabled = [
     "noctalia/bitwarden",
     "yocraft/web-launcher",
     "cleboost/ssh-launcher",
-    "jamesfeeder/special-workspaces",
     "noctalia/screen_recorder",
     "avivbintangaringga/nix-monitor",
     "dotnetrob/cat"
@@ -215,3 +214,6 @@ type = "noctalia/screen_recorder:recorder"
 
 [widget.special-workspaces]
 type = "jamesfeeder/special-workspaces:special-workspaces"
+
+[widget.workspaces]
+style = "focus_hint"
