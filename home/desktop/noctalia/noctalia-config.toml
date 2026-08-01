@@ -1,0 +1,180 @@
+[accessibility]
+ui_scale = 1.1500000096857548
+
+[bar.default]
+background_opacity = 0.84999998100101948
+center = [ "audio_visualizer" ]
+end = [ "media", "clipboard", "network", "bluetooth", "volume", "battery", "control-center", "session" ]
+padding = 15
+scale = 1.2500000111758709
+start = [ "launcher", "clock", "workspaces", "tray" ]
+thickness = 33
+
+    [bar.default.dead_zone.actions]
+    right = "none"
+
+[brightness]
+sync_all_monitors = true
+
+[desktop_widgets]
+schema_version = 2
+widget_order = [ "desktop-widget-0000000000000001" ]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 272.0
+    box_width = 496.0
+    cx = 344.0
+    cy = 1416.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "clock"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        background = false
+        background_opacity = 0.0
+        clock_style = "digital"
+        color = "on_surface"
+        font_family = ""
+
+[dock]
+auto_hide = true
+icon_size = 16
+launcher_position = "start"
+position = "left"
+
+[hot_corners.top_left]
+action = "control_center"
+
+[location]
+address = "Sherbrooke, QC"
+latitude = 45.400100000000002
+longitude = 71.899100000000004
+
+[lockscreen]
+blur_intensity = 0.50999998860061169
+fingerprint = false
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1418.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[plugin_settings."noctalia/bitwarden"]
+gen_special = true
+
+[plugin_settings."yocraft/web-launcher"]
+icon_provider = "duckduckgo"
+
+[plugins]
+enabled = [
+    "noctalia/bitwarden",
+    "yocraft/web-launcher",
+    "cleboost/ssh-launcher",
+    "jamesfeeder/special-workspaces",
+    "noctalia/screen_recorder",
+    "avivbintangaringga/nix-monitor",
+    "dotnetrob/cat"
+]
+
+[shell]
+avatar_path = "/home/alexy/.config/nixos/hosts/laptop/profile-picture.jpg"
+corner_radius_scale = 1.2500000186264515
+lang = "en"
+
+    [shell.launcher]
+    auto_paste = "ctrl_v"
+
+        [shell.launcher.providers.calculator]
+        global = true
+
+        [shell.launcher.providers.emoji]
+        global = false
+
+        [shell.launcher.providers.session]
+        prefix = ""
+
+        [shell.launcher.providers.wallpaper]
+        prefix = ""
+
+    [shell.panel]
+    control_center_placement = "floating"
+    floating_layer = "top"
+    open_near_click_session = true
+    transparency_mode = "soft"
+
+    [shell.screen_corners]
+    enabled = true
+    size = 19
+
+    [shell.screenshot]
+    directory = "/home/alexy/Pictures/Screenshots"
+
+    [shell.shadow]
+    alpha = 0.53999998793005943
+
+[theme]
+builtin = "Kanagawa"
+community_palette = "Cream"
+mode = "dark"
+source = "community"
+
+    [theme.templates]
+    community_ids = [ "zen-browser", "discord", "obsidian", "yazi" ]
+    enable_builtin_templates = false
+    enable_community_templates = false
+
+[wallpaper]
+enabled = false
+
+    [wallpaper.default]
+    path = "/nix/store/9xliinwx0a59sclibf65sm9ccpzkgbav-noctalia-5.0.0/share/noctalia/assets/noctalia-wallpaper.png"
+
+    [wallpaper.last]
+    path = "/nix/store/9xliinwx0a59sclibf65sm9ccpzkgbav-noctalia-5.0.0/share/noctalia/assets/noctalia-wallpaper.png"
+
+[widget.audio_visualizer]
+show_when_idle = true
+width = 150
+
+    [widget.audio_visualizer.actions]
+    left = "panel-toggle control-center home"
+    middle = "none"
+    right = "volume-mute"
+
+[widget.clock.actions]
+middle = "none"

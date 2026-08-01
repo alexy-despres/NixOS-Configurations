@@ -28,6 +28,10 @@
       url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
@@ -61,6 +65,7 @@
     nixosConfigurations = {
       # Import all hosts
       laptop = import ./hosts/laptop/flake.nix args;
+      laptop-noctalia = import ./hosts/laptop-noctalia/flake.nix args;
     };
   };
 }
