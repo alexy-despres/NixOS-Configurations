@@ -12,7 +12,7 @@
     github-desktop # Github desktop
     resources # Ressource monitor
     onlyoffice-desktopeditors # Office suite
-    librewolf # Backup browser
+    # librewolf # Backup browser
     localsend # Send files to another device on the same network
 
     # TUI
