@@ -13,12 +13,11 @@
   rounding = config.theme.rounding;
   blur = config.theme.blur;
   keyboardLayout = config.var.keyboardLayout;
-  # background = "rgba(" + config.lib.stylix.colors.base00 + "EE)";
 in {
   imports = [
     ./animations.nix
-    ./bindings.nix
     ./polkitagent.nix
+    ./bindings.nix
   ];
 
   home.packages = with pkgs; [

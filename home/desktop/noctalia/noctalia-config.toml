@@ -3,15 +3,25 @@ ui_scale = 1.1500000096857548
 
 [bar.default]
 background_opacity = 0.84999998100101948
-center = [ "audio_visualizer" ]
-end = [ "media", "clipboard", "network", "bluetooth", "volume", "battery", "control-center", "session" ]
+center = [ "audio_visualizer", "nix-monitor" ]
+end = [ "media", "clipboard", "network", "bluetooth", "group:g1", "battery", "control-center", "session" ]
 padding = 15
 scale = 1.2500000111758709
-start = [ "launcher", "clock", "workspaces", "tray" ]
+start = [ "launcher", "clock", "workspaces", "tray", "cat", "recorder", "special-workspaces" ]
 thickness = 33
 
     [bar.default.dead_zone.actions]
     right = "none"
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "volume" ]
+    opacity = 1.0
+    padding = 6.0
 
 [brightness]
 sync_all_monitors = true
@@ -58,11 +68,12 @@ longitude = 71.899100000000004
 [lockscreen]
 blur_intensity = 0.50999998860061169
 fingerprint = false
+wallpaper = "/home/alexy/Pictures/Wallpapers/planets.jpg"
 
 [lockscreen_widgets]
-enabled = false
+enabled = true
 schema_version = 2
-widget_order = [ "lockscreen-login-box@eDP-1" ]
+widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-0000000000000001" ]
 
     [lockscreen_widgets.grid]
     cell_size = 16
@@ -70,29 +81,41 @@ widget_order = [ "lockscreen-login-box@eDP-1" ]
     visible = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 196.0
-    box_width = 810.0
+    box_height = 70.0
+    box_width = 400.0
     cx = 1280.0
-    cy = 1418.0
+    cy = 957.0
     output = "eDP-1"
     rotation = 0.0
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
         background_color = "surface_variant"
-        background_opacity = 0.88
+        background_opacity = 0.75
         background_radius = 12.0
-        center_password_text = false
-        input_opacity = 1.0
-        input_radius = 6.0
-        layout = "regular"
+        center_password_text = true
+        input_opacity = 0.75
+        input_radius = 15.0
+        layout = "compact"
         show_caps_lock = true
         show_keyboard_layout = true
-        show_login_button = true
+        show_login_button = false
         show_media = true
         show_session_buttons = true
         show_unlock_hint = true
         show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 176.0
+    box_width = 448.0
+    cx = 1280.0
+    cy = 768.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "clock"
+
+[plugin_settings."dotnetrob/cat"]
+panel_placement = "floating"
 
 [plugin_settings."noctalia/bitwarden"]
 gen_special = true
@@ -134,7 +157,7 @@ lang = "en"
     [shell.panel]
     control_center_placement = "floating"
     floating_layer = "top"
-    open_near_click_session = true
+    open_near_click_session = false
     transparency_mode = "soft"
 
     [shell.screen_corners]
@@ -168,6 +191,7 @@ enabled = false
     path = "/nix/store/9xliinwx0a59sclibf65sm9ccpzkgbav-noctalia-5.0.0/share/noctalia/assets/noctalia-wallpaper.png"
 
 [widget.audio_visualizer]
+anchor = true
 show_when_idle = true
 width = 150
 
@@ -176,5 +200,18 @@ width = 150
     middle = "none"
     right = "volume-mute"
 
+[widget.cat]
+type = "dotnetrob/cat:cat"
+
 [widget.clock.actions]
 middle = "none"
+
+[widget.nix-monitor]
+scale = 0.75
+type = "avivbintangaringga/nix-monitor:nix-monitor"
+
+[widget.recorder]
+type = "noctalia/screen_recorder:recorder"
+
+[widget.special-workspaces]
+type = "jamesfeeder/special-workspaces:special-workspaces"

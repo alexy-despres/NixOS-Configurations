@@ -98,4 +98,5 @@ in {
 
   # Enable Nvidia container toolkit for GPU acceleration in containers (docker)
   hardware.nvidia-container-toolkit.enable = false;
+  programs.gpu-screen-recorder.enable = true;
 }

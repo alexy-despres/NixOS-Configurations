@@ -1,6 +1,7 @@
 {inputs, ...}: {
   imports = [
     inputs.noctalia.homeModules.default
+    ./hyprland
   ];
 
   wayland.windowManager.hyprland.settings.exec-once = ["noctalia"];

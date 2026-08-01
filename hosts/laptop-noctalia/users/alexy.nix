@@ -21,11 +21,8 @@
     ../../../home/programs/zen-browser # Browser
 
     # Desktop environment
-    ../../../home/desktop/hyprland # Window manager
     ../../../home/desktop/noctalia # Noctalia shell
-    ../../../home/desktop/hyprlock
     ../../../home/desktop/mpvpaper # Live wallpaper
-    # ../../../home/desktop/hyprpaper # Static wallpaper
     ../../../home/desktop/mime
     ../../../home/desktop/udiskie # Auto mount drives
 
