@@ -1,13 +1,17 @@
 {inputs, ...}: {
   imports = [inputs.zen-browser.homeModules.beta];
 
-  stylix.targets.zen-browser.profileNames = ["default"];
   programs.zen-browser = {
     enable = true;
     setAsDefaultBrowser = true;
 
     policies = let
       mkPluginUrl = id: "https://addons.mozilla.org/firefox/downloads/latest/${id}/latest.xpi";
+
+      mkLockedAttrs = builtins.mapAttrs (_: value: {
+        Value = value;
+        Status = "locked";
+      });
 
       mkExtensionEntry = {
         id,
@@ -60,6 +64,31 @@
           pinned = true;
         };
       };
+      Preferences = mkLockedAttrs {
+        "browser.aboutConfig.showWarning" = false;
+        "browser.tabs.warnOnClose" = false;
+        "media.videocontrols.picture-in-picture.video-toggle.enabled" = true;
+        # Disable swipe gestures (Browser:BackOrBackDuplicate, Browser:ForwardOrForwardDuplicate)
+        "browser.gesture.swipe.left" = "";
+        "browser.gesture.swipe.right" = "";
+        "browser.tabs.hoverPreview.enabled" = true;
+        "browser.newtabpage.activity-stream.feeds.topsites" = false;
+        "browser.topsites.contile.enabled" = false;
+
+        "privacy.resistFingerprinting" = true;
+        "privacy.resistFingerprinting.randomization.canvas.use_siphash" = true;
+        "privacy.resistFingerprinting.randomization.daily_reset.enabled" = true;
+        "privacy.resistFingerprinting.randomization.daily_reset.private.enabled" = true;
+        "privacy.resistFingerprinting.block_mozAddonManager" = true;
+        "privacy.spoof_english" = 1;
+
+        "privacy.firstparty.isolate" = true;
+        "network.cookie.cookieBehavior" = 5;
+        "dom.battery.enabled" = false;
+
+        "gfx.webrender.all" = true;
+        "network.http.http3.enabled" = true;
+      };
     };
 
     profiles.default = {
@@ -67,6 +96,10 @@
         "zen.workspaces.continue-where-left-off" = true;
         "zen.view.compact.hide-tabbar" = true;
         "zen.urlbar.behavior" = "float";
+        "ui.systemUsesDarkTheme" = 1;
+        "layout.css.prefers-color-scheme.content-override" = 0;
+        "browser.theme.content-theme" = 0;
+        "browser.theme.toolbar-theme" = 0;
       };
 
       search = {

@@ -22,7 +22,6 @@
 
     # Desktop environment
     ../../../home/desktop/noctalia # Noctalia shell
-    ../../../home/desktop/mpvpaper # Live wallpaper
     ../../../home/desktop/mime
     ../../../home/desktop/udiskie # Auto mount drives
 

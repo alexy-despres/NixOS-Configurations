@@ -2,6 +2,7 @@
   imports = [
     inputs.noctalia.homeModules.default
     ./hyprland
+    ./stylix.nix
   ];
 
   wayland.windowManager.hyprland.settings.exec-once = ["noctalia"];

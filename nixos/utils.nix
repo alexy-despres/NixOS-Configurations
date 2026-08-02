@@ -14,6 +14,8 @@
 in {
   networking.hostName = hostname;
 
+  programs.kdeconnect.enable = true;
+
   networking.networkmanager.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false;
 
@@ -123,6 +125,8 @@ in {
     btop
     unrar
     p7zip
+    iw
+    iproute2
   ];
 
   xdg.portal = {

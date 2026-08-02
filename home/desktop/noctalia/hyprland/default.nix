@@ -2,7 +2,6 @@
 {
   pkgs,
   config,
-  lib,
   ...
 }: let
   border-size = config.theme.border-size;
@@ -41,7 +40,14 @@ in {
     dconf
     wayland-utils
     wayland-protocols
+    mpvpaper
+    socat
+    ffmpegthumbnailer
   ];
+
+  wayland.windowManager.hyprland.extraConfig = ''
+    source = ~/.config/hypr/noctalia.conf
+  '';
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -59,6 +65,7 @@ in {
     settings = {
       exec-once = [
         "dbus-update-activation-environment --systemd --all &"
+        "kdeconnectd"
       ];
 
       monitor = [
@@ -92,10 +99,6 @@ in {
         gaps_out = gaps-out;
         border_size = border-size;
         layout = "master";
-        # "col.inactive_border" = lib.mkForce background;
-        "col.active_border" = lib.mkForce "rgba(b88558ff) rgba(ffb878ff) 45deg"; # Gold gradient
-        # "col.inactive_border" = lib.mkForce "rgba(665538ff) (b89a4aff) 45deg"; # Muted gold gradient
-        "col.inactive_border" = lib.mkForce "rgba(2a1500ff) rgba(3d2000ff) 45deg";
       };
 
       decoration = {
@@ -138,7 +141,7 @@ in {
       misc = {
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
-        disable_autoreload = true;
+        disable_autoreload = false;
         focus_on_activate = true;
       };
 
@@ -158,10 +161,6 @@ in {
           tap-to-click = true; # Enable tapping
           disable_while_typing = true; # Prevent accidental touches while typing
         };
-        # touchpad = {
-        #   natural_scroll = true;
-        #   clickfinger_behavior = true;
-        # };
       };
 
       ecosystem = {

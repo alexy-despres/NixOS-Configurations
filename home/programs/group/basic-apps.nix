@@ -1,4 +1,5 @@
 {
+  pkgs-bleeding,
   pkgs-stable,
   pkgs,
   ...
@@ -14,6 +15,9 @@
     onlyoffice-desktopeditors # Office suite
     # librewolf # Backup browser
     localsend # Send files to another device on the same network
+    pkgs-bleeding.protonmail-desktop # Mail client
+    pkgs-bleeding.proton-vpn # Main VPN client
+    prismlauncher
 
     # TUI
     caligula # User-friendly, lightweight TUI for disk imaging (ISO, USB BOOT)

@@ -7,7 +7,7 @@ center = [ "audio_visualizer" ]
 end = [ "media", "clipboard", "network", "bluetooth", "group:g1", "battery", "control-center", "session" ]
 padding = 15
 scale = 1.2500000111758709
-start = [ "launcher", "clock", "workspaces", "tray", "cat", "recorder", "nix-monitor" ]
+start = [ "launcher", "clock", "workspaces", "tray", "recorder", "widget", "gamermode", "cat" ]
 thickness = 33
 
     [bar.default.dead_zone.actions]
@@ -19,7 +19,7 @@ thickness = 33
     enabled = true
     fill = "surface_variant"
     id = "g1"
-    members = [ "volume" ]
+    members = [ "toggle", "volume" ]
     opacity = 1.0
     padding = 6.0
 
@@ -114,11 +114,21 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-00000000000000
     rotation = 0.0
     type = "clock"
 
+[plugin_settings."cleboost/hotspot"]
+interface = "wlo1"
+password = "Alexy_Sharing_9384"
+ssid = "Alexy's PC"
+
 [plugin_settings."dotnetrob/cat"]
 panel_placement = "floating"
 
 [plugin_settings."noctalia/bitwarden"]
 gen_special = true
+
+[plugin_settings."noctalia/mpvpaper"]
+picker_placement = "floating"
+picker_position = "center"
+video_directory = "/home/alexy/Wallpapers"
 
 [plugin_settings."yocraft/web-launcher"]
 icon_provider = "duckduckgo"
@@ -130,7 +140,12 @@ enabled = [
     "cleboost/ssh-launcher",
     "noctalia/screen_recorder",
     "avivbintangaringga/nix-monitor",
-    "dotnetrob/cat"
+    "dotnetrob/cat",
+    "cleboost/hotspot",
+    "noctalia/mpvpaper",
+    "oldirtty/color_picker",
+    "nomadcxx/gamer-mode",
+    "radimous/prismlauncher-instances"
 ]
 
 [shell]
@@ -151,6 +166,10 @@ lang = "en"
         prefix = ""
 
         [shell.launcher.providers.wallpaper]
+        global = false
+        prefix = ""
+
+        [shell.launcher.providers.windows]
         prefix = ""
 
     [shell.panel]
@@ -158,6 +177,8 @@ lang = "en"
     floating_layer = "top"
     open_near_click_session = false
     transparency_mode = "soft"
+    wallpaper_placement = "floating"
+    wallpaper_position = "center"
 
     [shell.screen_corners]
     enabled = true
@@ -173,21 +194,30 @@ lang = "en"
 builtin = "Kanagawa"
 community_palette = "Cream"
 mode = "dark"
-source = "community"
+source = "wallpaper"
+wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    community_ids = [ "zen-browser", "discord", "obsidian", "yazi" ]
-    enable_builtin_templates = false
-    enable_community_templates = false
+    builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "hyprland", "kitty", "starship" ]
+    community_ids = [ "zen-browser", "discord", "neovim", "obsidian", "lazygit", "yazi" ]
+    enable_builtin_templates = true
+    enable_community_templates = true
 
 [wallpaper]
-enabled = false
+directory = "/home/alexy/Wallpapers"
+directory_dark = "/home/alexy/Wallpapers"
+directory_light = "/home/alexy/Wallpapers"
+enabled = true
+transition = [ "disc" ]
 
     [wallpaper.default]
-    path = "/nix/store/9xliinwx0a59sclibf65sm9ccpzkgbav-noctalia-5.0.0/share/noctalia/assets/noctalia-wallpaper.png"
+    path = "/home/alexy/Wallpapers/room1-sunset.png"
 
     [wallpaper.last]
-    path = "/nix/store/9xliinwx0a59sclibf65sm9ccpzkgbav-noctalia-5.0.0/share/noctalia/assets/noctalia-wallpaper.png"
+    path = "/home/alexy/Wallpapers/room1-sunset.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/alexy/Wallpapers/room1-sunset.png"
 
 [widget.audio_visualizer]
 anchor = true
@@ -199,13 +229,24 @@ width = 150
     middle = "none"
     right = "volume-mute"
 
+[widget.bar]
+enabled = false
+type = "yuuto/calculator:bar"
+
+[widget.bar_2]
+type = "icefish/phone-connect:bar"
+
 [widget.cat]
 type = "dotnetrob/cat:cat"
 
 [widget.clock.actions]
 middle = "none"
 
+[widget.gamermode]
+type = "nomadcxx/gamer-mode:gamermode"
+
 [widget.nix-monitor]
+enabled = false
 scale = 0.75
 type = "avivbintangaringga/nix-monitor:nix-monitor"
 
@@ -215,5 +256,12 @@ type = "noctalia/screen_recorder:recorder"
 [widget.special-workspaces]
 type = "jamesfeeder/special-workspaces:special-workspaces"
 
+[widget.toggle]
+type = "cleboost/hotspot:toggle"
+
+[widget.widget]
+type = "oldirtty/color_picker:widget"
+
 [widget.workspaces]
+hide_when_empty = true
 style = "focus_hint"

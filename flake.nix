@@ -4,6 +4,7 @@
   '';
 
   inputs = {
+    nixpkgs-bleeding.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -44,12 +45,14 @@
   outputs = inputs @ {
     nixpkgs,
     nixpkgs-stable,
+    nixpkgs-bleeding,
     ...
   }: let
     system = "x86_64-linux";
 
     pkgs = nixpkgs.legacyPackages.${system};
     pkgs-stable = nixpkgs-stable.legacyPackages.${system};
+    pkgs-bleeding = nixpkgs-bleeding.legacyPackages.${system};
 
     args = {
       inherit
@@ -58,6 +61,7 @@
         system
         pkgs
         pkgs-stable
+        pkgs-bleeding
         ;
     };
   in {

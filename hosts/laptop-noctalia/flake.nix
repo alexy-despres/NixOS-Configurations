@@ -1,6 +1,7 @@
 {
   inputs,
   nixpkgs,
+  pkgs-bleeding,
   ...
 }:
 nixpkgs.lib.nixosSystem {
@@ -8,7 +9,7 @@ nixpkgs.lib.nixosSystem {
     {
       nixpkgs.overlays = [
       ];
-      _module.args = {inherit inputs;};
+      _module.args = {inherit inputs pkgs-bleeding;};
     }
 
     inputs.nixos-hardware.nixosModules.asus-zephyrus-gu603h # Tweaks for my laptop

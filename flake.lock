@@ -786,6 +786,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-bleeding": {
+      "locked": {
+        "lastModified": 1785483748,
+        "narHash": "sha256-M4HXpLsR7iFTNQfD/q+zK8/QeRYztYVDVIdIgCVGGZ0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "59ea0b1c043c463e39fcb3cfb9a5c8bcf0777c72",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1779796641,
@@ -1042,6 +1058,7 @@
         "nix-index-database": "nix-index-database",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",
+        "nixpkgs-bleeding": "nixpkgs-bleeding",
         "nixpkgs-stable": "nixpkgs-stable",
         "noctalia": "noctalia",
         "notashelf-tuigreet": "notashelf-tuigreet",

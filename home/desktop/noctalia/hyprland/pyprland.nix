@@ -25,6 +25,18 @@
       size = "70% 60%";
       lazy = true;
     };
+    scratchpads.mail = {
+      command = "proton-mail";
+      class = "proton-mail";
+      size = "85% 85%";
+      lazy = true;
+    };
+    scratchpads.vpn = {
+      command = "protonvpn-app";
+      class = "proton-vpn";
+      size = "60% 60%";
+      lazy = true;
+    };
   };
 in {
   home.packages = [pkgs.pyprland];

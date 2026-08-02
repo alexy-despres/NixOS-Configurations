@@ -34,43 +34,13 @@ in {
         "$mod, X, exec, noctalia msg panel-toggle session" # Powermenu
         "$shiftMod, L, exec, noctalia msg session lock" # Lock
 
-        # Quick menu
-        (
-          "$shiftMod, X, exec, "
-          + lib.getExe (mkMenu [
-            {
-              key = "q";
-              desc = "quit";
-              cmd = "echo quitting..."; # Doesn't actually do anything
-            }
-            {
-              key = "s";
-              desc = "Suspend";
-              cmd = "systemctl suspend";
-            }
-            {
-              key = "r";
-              desc = "Reboot";
-              cmd = "systemctl reboot";
-            }
-            {
-              key = "p";
-              desc = "Power Off";
-              cmd = "systemctl poweroff";
-            }
-            {
-              key = "n";
-              desc = "Nightshift";
-              cmd = "nightshift-toggle";
-            }
-          ])
-        )
-
         # Quick launch
         "$mod, RETURN, exec, uwsm app -- ${pkgs.ghostty}/bin/ghostty" # Ghostty (terminal)
         "$mod, T, exec, uwsm app -- ${pkgs.kitty}/bin/kitty" # Kitty (terminal)
         "$mod, E, exec,  uwsm app -- ${pkgs.thunar}/bin/thunar" # Thunar
         "$mod, SPACE, exec, noctalia msg panel-toggle launcher" # Launcher
+        "$shiftMod, P, exec, noctalia msg panel-toggle noctalia/mpvpaper:picker" # Wallpaper picker
+        "$mod, P, exec, noctalia msg panel-toggle wallpaper" # Wallpaper picker
         "$mod, N, exec, noctalia msg panel-toggle control-center notifications" # Sidebar (Notifications, quick actions)
         "$mod, W, exec, uwsm app -- zen-beta"
 
@@ -80,13 +50,16 @@ in {
 
         "$mod, G, exec, pypr toggle github" # Github
         "CONTROL SHIFT, ESCAPE, exec, pypr toggle sysmon" # Btop
-        "$mod, M, exec, pypr toggle music" # Spotify
+        "$mod, S, exec, pypr toggle music" # Spotify
+        "$mod, M, exec, pypr toggle mail" # Proton mail
+        "$mod, V, exec, pypr toggle vpn" # Proton mail
         "$mod, O, exec, pypr toggle notes" # Obsidian
 
         # Windows
         "$mod,Q, killactive," # Close window
         "$mod,F, fullscreen" # Toggle Fullscreen
         "$shiftMod, F, togglefloating," # Toggle Floating
+        "$shiftMod, N, exec, nightshift-toggle" # Nightshift
 
         # Focus Windows
         "$mod,H, movefocus, l" # Move focus left
