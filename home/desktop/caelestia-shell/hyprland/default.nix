@@ -58,6 +58,7 @@ in {
     settings = {
       exec-once = [
         "dbus-update-activation-environment --systemd --all &"
+        "kdeconnectd"
       ];
 
       monitor = [
@@ -93,7 +94,6 @@ in {
         layout = "master";
         # "col.inactive_border" = lib.mkForce background;
         "col.active_border" = lib.mkForce "rgba(b88558ff) rgba(ffb878ff) 45deg"; # Gold gradient
-        # "col.inactive_border" = lib.mkForce "rgba(665538ff) (b89a4aff) 45deg"; # Muted gold gradient
         "col.inactive_border" = lib.mkForce "rgba(2a1500ff) rgba(3d2000ff) 45deg";
       };
 
@@ -161,10 +161,6 @@ in {
           tap-to-click = true; # Enable tapping
           disable_while_typing = true; # Prevent accidental touches while typing
         };
-        # touchpad = {
-        #   natural_scroll = true;
-        #   clickfinger_behavior = true;
-        # };
       };
 
       ecosystem = {

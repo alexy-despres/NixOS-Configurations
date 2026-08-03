@@ -40,9 +40,6 @@ in {
     dconf
     wayland-utils
     wayland-protocols
-    mpvpaper
-    socat
-    ffmpegthumbnailer
   ];
 
   wayland.windowManager.hyprland.extraConfig = ''

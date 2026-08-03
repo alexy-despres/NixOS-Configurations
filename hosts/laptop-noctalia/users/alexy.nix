@@ -29,9 +29,7 @@
   ];
 
   home = {
-    inherit (config.var) username;
-
-    homeDirectory = "/home/" + config.var.username;
+    inherit (config.var) username homeDirectory;
 
     file.".face" = {
       source = ../profile-picture.jpg;

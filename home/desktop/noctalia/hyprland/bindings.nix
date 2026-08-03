@@ -1,30 +1,4 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}: let
-  colors = config.lib.stylix.colors;
-
-  mkMenu = menu: let
-    configFile = pkgs.writeText "config.yaml" (
-      lib.generators.toYAML {} {
-        anchor = "bottom-right";
-        border = "#${colors.base0D}80";
-        background = "#${colors.base01}EE";
-        color = "#${colors.base05}";
-        margin_right = 15;
-        margin_bottom = 15;
-        rows_per_column = 5;
-
-        inherit menu;
-      }
-    );
-  in
-    pkgs.writeShellScriptBin "menu" ''
-      exec ${lib.getExe pkgs.wlr-which-key} ${configFile}
-    '';
-in {
+{pkgs, ...}: {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     "$shiftMod" = "SUPER_SHIFT";
@@ -39,15 +13,11 @@ in {
         "$mod, T, exec, uwsm app -- ${pkgs.kitty}/bin/kitty" # Kitty (terminal)
         "$mod, E, exec,  uwsm app -- ${pkgs.thunar}/bin/thunar" # Thunar
         "$mod, SPACE, exec, noctalia msg panel-toggle launcher" # Launcher
-        "$shiftMod, P, exec, noctalia msg panel-toggle noctalia/mpvpaper:picker" # Wallpaper picker
-        "$mod, P, exec, noctalia msg panel-toggle wallpaper" # Wallpaper picker
+        "$mod, P, exec, noctalia msg panel-toggle nomadcxx/gslapper:picker" # Wallpaper picker
         "$mod, N, exec, noctalia msg panel-toggle control-center notifications" # Sidebar (Notifications, quick actions)
         "$mod, W, exec, uwsm app -- zen-beta"
 
         "$mod, D, exec, sh -c 'hyprctl clients -j | grep -q \"\\\"class\\\": \\\"discord\\\"\" || uwsm app -- discord; hyprctl dispatch togglespecialworkspace communication'" # Special workspaces
-        # "$mod, D, exec, uwsm app -- discord" # Discord is weird so we do it differently
-        # "$mod, D, togglespecialworkspace, communication"
-
         "$mod, G, exec, pypr toggle github" # Github
         "CONTROL SHIFT, ESCAPE, exec, pypr toggle sysmon" # Btop
         "$mod, S, exec, pypr toggle music" # Spotify
@@ -74,8 +44,8 @@ in {
         # "$shiftMod, L, focusmonitor, 1" # Focus next monitor
 
         # Utilities
-        "$shiftMod, S, exec, noctalia msg screenshot-fullscreen" # Capture region (freeze)
-        "$shiftMod+Alt, S, exec, noctalia msg screenshot-region" # Capture region
+        "$shiftMod+Alt, S, exec, noctalia msg screenshot-fullscreen" # Capture
+        "$shiftMod, S, exec, noctalia msg screenshot-region" # Capture region
       ]
       # Move/Change workspaces
       ++ (builtins.concatLists (

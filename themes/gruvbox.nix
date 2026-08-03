@@ -18,7 +18,7 @@
       border-size = 2;
       animation-speed = "medium"; # "fast" | "medium" | "slow"
       fetch = "pfetch"; # "nerdfetch" | "neofetch" | "pfetch" | "none"
-      wallpaper = "/home/alexy/Pictures/Wallpapers/space.webm"; # For mpvpaper
+      wallpaper = "/home/alexy/Pictures/Wallpapers/space.webm"; # For mpvpaper (caelestia)
     };
     description = "Theme configuration options";
   };
@@ -44,20 +44,6 @@
       base0D = "888888";
       base0E = "999999";
       base0F = "444444";
-      # base02 = "262626"; # dark bg selected
-      # base03 = "777777"; # comments / muted
-      # base04 = "bdae93"; # light bg
-      # base05 = "ddc7a1"; # default fg
-      # base06 = "ebdbb2"; # light fg
-      # base07 = "fbf1c7"; # lightest fg
-      # base08 = "ea6962"; # red
-      # base09 = "e78a4e"; # orange
-      # base0A = "d8a657"; # yellow
-      # base0B = "a9b665"; # green
-      # base0C = "89b482"; # aqua/cyan
-      # base0D = "7daea3"; # blue
-      # base0E = "d3869b"; # purple/pink
-      # base0F = "bd6f3e"; # brown/orange alt
     };
 
     cursor = {

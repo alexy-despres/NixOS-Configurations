@@ -97,8 +97,6 @@ in {
         # For multiple monitors
         "$shiftMod, J, layoutmsg, removemaster" # Remove from master
         "$shiftMod, K, layoutmsg, addmaster" # Add to master
-        # "$shiftMod, H, focusmonitor, -1" # Focus previous monitor
-        # "$shiftMod, L, focusmonitor, 1" # Focus next monitor
 
         # Utilities
         "$shiftMod, SPACE, exec, caelestia shell gameMode toggle" # Toggle Focus/Game mode

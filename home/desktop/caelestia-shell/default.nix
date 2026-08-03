@@ -14,6 +14,7 @@
     ./background.nix
     ./swappy.nix
     ./hyprland
+    ./stylix.nix
   ];
 
   programs.caelestia = {

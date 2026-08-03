@@ -13,6 +13,10 @@
     nvf.url = "github:notashelf/nvf";
     notashelf-tuigreet.url = "github:NotAShelf/tuigreet";
 
+    gslapper = {
+      url = "github:Nomadcxx/gSlapper";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";

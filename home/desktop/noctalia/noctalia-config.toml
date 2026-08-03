@@ -130,6 +130,12 @@ picker_placement = "floating"
 picker_position = "center"
 video_directory = "/home/alexy/Wallpapers"
 
+[plugin_settings."nomadcxx/gslapper"]
+fade = true
+picker_placement = "floating"
+picker_position = "center"
+video_directory = "/home/alexy/Wallpapers/Videos"
+
 [plugin_settings."yocraft/web-launcher"]
 icon_provider = "duckduckgo"
 
@@ -142,11 +148,26 @@ enabled = [
     "avivbintangaringga/nix-monitor",
     "dotnetrob/cat",
     "cleboost/hotspot",
-    "noctalia/mpvpaper",
     "oldirtty/color_picker",
     "nomadcxx/gamer-mode",
-    "radimous/prismlauncher-instances"
+    "radimous/prismlauncher-instances",
+    "nomadcxx/gslapper"
 ]
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/Nomadcxx/noctalia-gslapper"
+    name = "gSlapper"
 
 [shell]
 avatar_path = "/home/alexy/.config/nixos/hosts/laptop/profile-picture.jpg"
@@ -193,31 +214,35 @@ lang = "en"
 [theme]
 builtin = "Kanagawa"
 community_palette = "Cream"
-mode = "dark"
+mode = "auto"
 source = "wallpaper"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "hyprland", "kitty", "starship" ]
-    community_ids = [ "zen-browser", "discord", "neovim", "obsidian", "lazygit", "yazi" ]
+    community_ids = [ "zen-browser", "discord", "neovim", "obsidian", "prismlauncher", "lazygit", "yazi" ]
     enable_builtin_templates = true
     enable_community_templates = true
 
 [wallpaper]
-directory = "/home/alexy/Wallpapers"
-directory_dark = "/home/alexy/Wallpapers"
-directory_light = "/home/alexy/Wallpapers"
+directory = "/home/alexy/Wallpapers/Images"
+directory_dark = "/home/alexy/Wallpapers/Images"
+directory_light = "/home/alexy/Wallpapers/Images"
 enabled = true
 transition = [ "disc" ]
 
     [wallpaper.default]
-    path = "/home/alexy/Wallpapers/room1-sunset.png"
+    path = "/home/alexy/Wallpapers/vintage-ascent.jpg"
 
     [wallpaper.last]
-    path = "/home/alexy/Wallpapers/room1-sunset.png"
+    path = "/home/alexy/Wallpapers/Images/explorer_green_day.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/alexy/Wallpapers/room1-sunset.png"
+    path = "/home/alexy/Wallpapers/Images/explorer_green_day.jpg"
+
+    [[wallpaper.favorite]]
+    path = "/home/alexy/Wallpapers/winter-is-here.png"
+    theme_mode = "auto"
 
 [widget.audio_visualizer]
 anchor = true

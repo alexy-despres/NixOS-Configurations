@@ -18,6 +18,7 @@
     pkgs-bleeding.protonmail-desktop # Mail client
     pkgs-bleeding.proton-vpn # Main VPN client
     prismlauncher
+    wl-mirror
 
     # TUI
     caligula # User-friendly, lightweight TUI for disk imaging (ISO, USB BOOT)
