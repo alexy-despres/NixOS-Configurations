@@ -3,11 +3,11 @@ ui_scale = 1.1500000096857548
 
 [bar.default]
 background_opacity = 0.84999998100101948
-center = [ "audio_visualizer" ]
+center = [ "audio_visualizer", "battery-threshold", "status" ]
 end = [ "media", "clipboard", "network", "bluetooth", "group:g1", "battery", "control-center", "session" ]
 padding = 15
 scale = 1.2500000111758709
-start = [ "launcher", "clock", "workspaces", "tray", "recorder", "widget", "gamermode", "cat" ]
+start = [ "launcher", "clock", "workspaces", "tray", "recorder", "widget", "widget_4", "bar_3", "gamermode", "cat" ]
 thickness = 33
 
     [bar.default.dead_zone.actions]
@@ -68,7 +68,7 @@ longitude = 71.899100000000004
 [lockscreen]
 blur_intensity = 0.50999998860061169
 fingerprint = false
-wallpaper = "/home/alexy/Pictures/Wallpapers/planets.jpg"
+wallpaper = "/home/alexy/Wallpapers/Images/moonlight.jpg"
 
 [lockscreen_widgets]
 enabled = true
@@ -84,17 +84,17 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-00000000000000
     box_height = 70.0
     box_width = 400.0
     cx = 1280.0
-    cy = 957.0
+    cy = 877.0
     output = "eDP-1"
     rotation = 0.0
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
         background_color = "surface_variant"
-        background_opacity = 0.75
-        background_radius = 12.0
+        background_opacity = 0.59999999999999998
+        background_radius = 10.0
         center_password_text = true
-        input_opacity = 0.75
+        input_opacity = 0.59999999999999998
         input_radius = 15.0
         layout = "compact"
         show_caps_lock = true
@@ -102,7 +102,7 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-00000000000000
         show_login_button = false
         show_media = true
         show_session_buttons = true
-        show_unlock_hint = true
+        show_unlock_hint = false
         show_weather = true
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
@@ -113,6 +113,14 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-00000000000000
     output = "eDP-1"
     rotation = 0.0
     type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        center_text = false
+        clock_style = "digital"
+        color = "on_surface"
+        font_family = "Jost* 600 Semi"
+        shadow = true
 
 [plugin_settings."cleboost/hotspot"]
 interface = "wlo1"
@@ -136,6 +144,9 @@ picker_placement = "floating"
 picker_position = "center"
 video_directory = "/home/alexy/Wallpapers/Videos"
 
+[plugin_settings."yocraft/qrcode"]
+close_on_copy = true
+
 [plugin_settings."yocraft/web-launcher"]
 icon_provider = "duckduckgo"
 
@@ -151,7 +162,9 @@ enabled = [
     "oldirtty/color_picker",
     "nomadcxx/gamer-mode",
     "radimous/prismlauncher-instances",
-    "nomadcxx/gslapper"
+    "nomadcxx/gslapper",
+    "yocraft/qrcode",
+    "noctalia/timer"
 ]
 
     [[plugins.source]]
@@ -214,7 +227,7 @@ lang = "en"
 [theme]
 builtin = "Kanagawa"
 community_palette = "Cream"
-mode = "auto"
+mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "m3-content"
 
@@ -235,10 +248,10 @@ transition = [ "disc" ]
     path = "/home/alexy/Wallpapers/vintage-ascent.jpg"
 
     [wallpaper.last]
-    path = "/home/alexy/Wallpapers/Images/explorer_green_day.jpg"
+    path = "/home/alexy/Wallpapers/Images/abstract-dark.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/alexy/Wallpapers/Images/explorer_green_day.jpg"
+    path = "/home/alexy/Wallpapers/Images/abstract-dark.png"
 
     [[wallpaper.favorite]]
     path = "/home/alexy/Wallpapers/winter-is-here.png"
@@ -261,6 +274,13 @@ type = "yuuto/calculator:bar"
 [widget.bar_2]
 type = "icefish/phone-connect:bar"
 
+[widget.bar_3]
+show_idle_on_horizontal = false
+type = "noctalia/timer:bar"
+
+[widget.battery-threshold]
+type = "damian-ds7/battery-threshold:battery-threshold"
+
 [widget.cat]
 type = "dotnetrob/cat:cat"
 
@@ -281,11 +301,17 @@ type = "noctalia/screen_recorder:recorder"
 [widget.special-workspaces]
 type = "jamesfeeder/special-workspaces:special-workspaces"
 
+[widget.status]
+type = "alexander/mimir:status"
+
 [widget.toggle]
 type = "cleboost/hotspot:toggle"
 
 [widget.widget]
 type = "oldirtty/color_picker:widget"
+
+[widget.widget_4]
+type = "yocraft/qrcode:widget"
 
 [widget.workspaces]
 hide_when_empty = true
