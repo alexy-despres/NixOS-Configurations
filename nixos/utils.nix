@@ -129,6 +129,13 @@ in {
     iproute2
   ];
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    libsecret
+    stdenv.cc.cc.lib
+    glib
+  ];
+
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;

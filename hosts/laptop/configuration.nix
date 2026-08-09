@@ -16,6 +16,7 @@
     ../../nixos/utils.nix
     ../../nixos/virtualization.nix
     ../../nixos/firejail.nix
+    ../../nixos/proton-drive.nix
 
     ./hardware-configuration.nix
     ./variables.nix
