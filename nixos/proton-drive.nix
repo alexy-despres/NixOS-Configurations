@@ -1,30 +1,26 @@
-{pkgs, ...}: let
-  localDir = "/home/alexy/ProtonDrive"; # adjust to your local sync folder
-  remoteName = "protondrive"; # must match your `rclone config` remote name
-in {
-  environment.systemPackages = [pkgs.rclone];
+{pkgs, ...}: {
+  environment.systemPackages = [pkgs.rclone pkgs.fuse3];
 
-  systemd.user.services.proton-drive-bisync = {
-    description = "Proton Drive bisync";
+  systemd.user.services.rclone-protondrive-mount = {
+    description = "Rclone ProtonDrive mount";
+    after = ["network-online.target"];
+    wants = ["network-online.target"];
+    wantedBy = ["default.target"];
     serviceConfig = {
-      Type = "oneshot";
+      Type = "notify";
+      Environment = "PATH=/run/wrappers/bin:/run/current-system/sw/bin";
+      ExecStartPre = "${pkgs.coreutils}/bin/mkdir -p %h/Drives/ProtonDrive";
       ExecStart = ''
-        ${pkgs.rclone}/bin/rclone bisync ${localDir} ${remoteName}: \
-          --max-delete 10 \
-          --conflict-resolve newer \
-          --conflict-loser num \
-          --check-access \
-          --resilient
+        ${pkgs.rclone}/bin/rclone mount protondrive: %h/Drives/ProtonDrive \
+          --vfs-cache-mode writes \
+          --vfs-cache-max-age 24h \
+          --dir-cache-time 30s \
+          --poll-interval 15s \
+          --allow-other=false
       '';
-    };
-  };
-
-  systemd.user.timers.proton-drive-bisync = {
-    description = "Run Proton Drive bisync every 30 minutes";
-    wantedBy = ["timers.target"];
-    timerConfig = {
-      OnBootSec = "2min";
-      OnUnitActiveSec = "30min";
+      ExecStop = "${pkgs.fuse3}/bin/fusermount3 -u %h/Drives/ProtonDrive";
+      Restart = "on-failure";
+      RestartSec = 10;
     };
   };
 }
