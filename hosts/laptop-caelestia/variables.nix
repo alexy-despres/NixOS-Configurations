@@ -8,9 +8,10 @@
   ];
 
   config.var = {
-    hostname = "laptop";
+    hostname = "laptop-caelestia";
     username = "alexy";
     userConfigs = ./users/alexy.nix;
+    homeDirectory = "/home/" + config.var.username;
     configDirectory = "/home/" + config.var.username + "/.config/nixos"; # Do not change this
 
     keyboardLayout = "us";

@@ -21,18 +21,6 @@
       occupiedLabel = "󰪥 ";
       showWindows = false;
       shown = 5;
-      specialWorkspaceIcons = [
-        {
-          name = "github";
-          icon = "cloud";
-        }
-      ];
-      windowIcons = [
-        {
-          regex = "GitHub Desktop";
-          icon = "cloud_sync";
-        }
-      ];
     };
     entries = [
       {

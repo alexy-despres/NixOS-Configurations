@@ -21,10 +21,9 @@
     ../../../home/programs/zen-browser # Browser
 
     # Desktop environment
-    ../../../home/desktop/hyprland # Window manager
     ../../../home/desktop/caelestia-shell # Caelestia shell
     ../../../home/desktop/hyprlock
-    ../../../home/desktop/mpvpaper # Live wallpaper
+    ../../../home/desktop/waypaper # Live wallpaper
     # ../../../home/desktop/hyprpaper # Static wallpaper
     ../../../home/desktop/mime
     ../../../home/desktop/udiskie # Auto mount drives
@@ -34,8 +33,6 @@
 
   home = {
     inherit (config.var) username;
-
-    homeDirectory = "/home/" + config.var.username;
 
     file.".face" = {
       source = ../profile-picture.jpg;

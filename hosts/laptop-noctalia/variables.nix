@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ../../themes/gruvbox.nix # Theme chosen
+    ../../themes/neutral.nix # Theme chosen
   ];
 
   config.var = {

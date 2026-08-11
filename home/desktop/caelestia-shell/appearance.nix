@@ -46,4 +46,9 @@ in {
       thickness = bar-thickness;
     };
   };
+  programs.zsh.initContent = ''
+    if [ -f "$HOME/.local/state/caelestia/sequences.txt" ]; then
+      cat "$HOME/.local/state/caelestia/sequences.txt"
+    fi
+  '';
 }

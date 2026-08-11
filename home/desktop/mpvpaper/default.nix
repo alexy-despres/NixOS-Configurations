@@ -1,3 +1,4 @@
+# Live wallpaper set by stylix (Fixed)
 {config, ...}: let
   wallpaper = config.theme.wallpaper;
 in {

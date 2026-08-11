@@ -12,6 +12,7 @@
     stylix.url = "github:danth/stylix";
     nvf.url = "github:notashelf/nvf";
     notashelf-tuigreet.url = "github:NotAShelf/tuigreet";
+    # awww.url = "git+https://codeberg.org/LGFae/awww";
 
     gslapper = {
       url = "github:Nomadcxx/gSlapper";
@@ -72,7 +73,7 @@
     formatter.${system} = pkgs.alejandra; # Auto formatting
     nixosConfigurations = {
       # Import all hosts
-      laptop = import ./hosts/laptop/flake.nix args;
+      laptop-caelestia = import ./hosts/laptop-caelestia/flake.nix args;
       laptop-noctalia = import ./hosts/laptop-noctalia/flake.nix args;
     };
   };

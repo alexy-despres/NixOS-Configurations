@@ -78,10 +78,13 @@ in {
 
         # Special workspaces
         "$mod, D, exec, caelestia toggle communication" # Discord
-        "CONTROL SHIFT, ESCAPE, exec, caelestia toggle sysmon" # Btop
-        "$mod, M, exec, caelestia toggle music" # Spotify
-        "$mod, G, exec, caelestia toggle github" # Github
-        "$mod, O, exec, caelestia toggle notes" # Obsidian
+        "CONTROL SHIFT, ESCAPE, exec, pypr toggle sysmon" # Btop
+        "$mod, S, exec, pypr toggle music" # Spotify
+        "$mod, M, exec, pypr toggle mail" # Proton mail
+        "$mod, V, exec, pypr toggle vpn" # Proton mail
+        "$mod, O, exec, pypr toggle notes" # Obsidian
+        "$mod, G, exec, pypr toggle github" # Github
+        "$mod, P, exec, pypr toggle wallpaper" # Wallpaper picker
 
         # Windows
         "$mod,Q, killactive," # Close window

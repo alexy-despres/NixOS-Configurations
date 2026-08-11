@@ -18,6 +18,7 @@ in {
     ./animations.nix
     ./polkitagent.nix
     ./bindings.nix
+    ./pyprland.nix
   ];
 
   home.packages = with pkgs; [
@@ -40,6 +41,7 @@ in {
     dconf
     wayland-utils
     wayland-protocols
+    inotify-tools
   ];
 
   wayland.windowManager.hyprland = {
@@ -92,9 +94,6 @@ in {
         gaps_out = gaps-out;
         border_size = border-size;
         layout = "master";
-        # "col.inactive_border" = lib.mkForce background;
-        "col.active_border" = lib.mkForce "rgba(b88558ff) rgba(ffb878ff) 45deg"; # Gold gradient
-        "col.inactive_border" = lib.mkForce "rgba(2a1500ff) rgba(3d2000ff) 45deg";
       };
 
       decoration = {
@@ -132,16 +131,12 @@ in {
 
         # Special workspaces
         "workspace special:communication, match:class discord"
-        "workspace special:sysmon, match:class btop"
-        "workspace special:music, match:class spotify"
-        "workspace special:github, match:class github"
-        "workspace special:obsidian, match:class notes"
       ];
 
       misc = {
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
-        disable_autoreload = true;
+        disable_autoreload = false;
         focus_on_activate = true;
       };
 

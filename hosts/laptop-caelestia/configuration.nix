@@ -24,5 +24,8 @@
 
   home-manager.users."${config.var.username}" = import config.var.userConfigs;
 
+  stylix.autoEnable = false;
+  stylix.targets.grub.enable = true;
+
   system.stateVersion = "24.05";
 }
