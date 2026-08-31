@@ -27,7 +27,7 @@
         style = "solid";
         width = 75;
         opacity = 85;
-        workspaceCount = 10;
+        workspaceCount = 9;
         modules = {
           left = ["workspaces" "media"];
           center = ["visualizer"];

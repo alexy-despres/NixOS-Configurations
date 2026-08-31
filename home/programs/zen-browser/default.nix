@@ -63,6 +63,10 @@
           id = "bitwarden-password-manager";
           pinned = true;
         };
+        "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = mkExtensionEntry {
+          id = "vimium-ff";
+          pinned = false;
+        };
       };
       Preferences = mkLockedAttrs {
         "browser.aboutConfig.showWarning" = false;
