@@ -9,6 +9,10 @@
     rev = "06d4e90fb5410e9c4d0b3131584060adddf89406";
     hash = "sha256-G/UIr1bKnxn1AcHl/4FL/jou6b7M2VeREslYVELxdmw=";
   };
+  cursorShaders2 = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/IT2669-Stephin/linux-ricing/fd2b3058adc886daa08c7d98a15d6ea70a8491a2/ghostty/shaders/perfection.glsl";
+    hash = "sha256-8Mtw5AVPpWRbyKWpktOwc5o/3oYAYQlLIxihyxid710=";
+  };
   c = config.lib.stylix.colors;
 in {
   home.sessionVariables = {
@@ -29,6 +33,7 @@ in {
       copy-on-select = "clipboard";
       app-notifications = false;
       custom-shader = "${cursorShaders}/cursor_warp.glsl";
+      # custom-shader = "${cursorShaders2}";
       custom-shader-animation = "always";
       keybind = [
         "shift+ctrl+tab=new_tab"

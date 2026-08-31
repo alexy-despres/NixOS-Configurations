@@ -32,8 +32,8 @@ in {
     bind =
       [
         "$mod, X, global, caelestia:session" # Powermenu
-        "$shiftMod, L, exec, hyprlock" # Lock (using hyprlock)
-        # "$shiftMod, L, global, caelestia:lock" # Lock (using caelestia's built in lock)
+        # "$shiftMod, L, exec, hyprlock" # Lock (using hyprlock)
+        "$shiftMod, L, global, caelestia:lock" # Lock (using caelestia's built in lock)
 
         # Quick menu
         (

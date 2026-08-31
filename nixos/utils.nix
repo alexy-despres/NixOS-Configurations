@@ -145,6 +145,10 @@ in {
         "gtk"
         "hyprland"
       ];
+      plasma.default = [
+        "kde"
+        "gtk"
+      ];
     };
 
     extraPortals = [pkgs.xdg-desktop-portal-gtk];

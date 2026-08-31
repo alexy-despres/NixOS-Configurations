@@ -12,6 +12,7 @@
     stylix.url = "github:danth/stylix";
     nvf.url = "github:notashelf/nvf";
     notashelf-tuigreet.url = "github:NotAShelf/tuigreet";
+    serpantinum.url = "github:ilyamiro/serpantinum";
     # awww.url = "git+https://codeberg.org/LGFae/awww";
 
     gslapper = {
@@ -45,6 +46,10 @@
         home-manager.follows = "home-manager";
       };
     };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -75,6 +80,8 @@
       # Import all hosts
       laptop-caelestia = import ./hosts/laptop-caelestia/flake.nix args;
       laptop-noctalia = import ./hosts/laptop-noctalia/flake.nix args;
+      laptop-niri = import ./hosts/laptop-niri/flake.nix args;
+      laptop-serpantinum = import ./hosts/laptop-serpantinum/flake.nix args;
     };
   };
 }

@@ -17,7 +17,7 @@
   };
 
   home.packages = with pkgs; [
-    inputs.gslapper.packages.${pkgs.system}.gslapper
+    inputs.gslapper.packages.${pkgs.stdenv.hostPlatform.system}.gslapper
     gst_all_1.gstreamer
     socat
     qrencode

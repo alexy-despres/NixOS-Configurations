@@ -19,6 +19,7 @@
       nerd-fonts.meslo-lg
       openmoji-color
       twemoji-color-font
+      nerd-fonts.iosevka
     ];
 
     enableDefaultPackages = false;

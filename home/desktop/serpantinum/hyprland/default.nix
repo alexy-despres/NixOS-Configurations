@@ -2,6 +2,7 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }: let
   border-size = config.theme.border-size;
@@ -40,7 +41,7 @@ in {
     dconf
     wayland-utils
     wayland-protocols
-    inotify-tools
+    pulseaudio
   ];
 
   wayland.windowManager.hyprland = {
@@ -93,6 +94,8 @@ in {
         gaps_out = gaps-out;
         border_size = border-size;
         layout = "master";
+        "col.active_border" = lib.mkForce "rgb(2a2a2a)";
+        "col.inactive_border" = lib.mkForce "rgb(1a1a1a)";
       };
 
       decoration = {
