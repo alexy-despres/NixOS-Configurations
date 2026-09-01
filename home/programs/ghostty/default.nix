@@ -25,6 +25,8 @@ in {
     installVimSyntax = true;
     enableZshIntegration = true;
     settings = {
+      config-file = ["config-colors"];
+      font-size = 19; # Default size
       window-padding-x = 10;
       confirm-close-surface = false;
       window-padding-y = 10;

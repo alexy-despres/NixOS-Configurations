@@ -1226,11 +1226,11 @@
         "serpantinum-wallpapers": "serpantinum-wallpapers"
       },
       "locked": {
-        "lastModified": 1788128213,
-        "narHash": "sha256-06agiukx22yvr6hEJVRcZUEl/54XFPs2maGxF5po5TU=",
+        "lastModified": 1788201697,
+        "narHash": "sha256-eCUsVCFfFFvC2lvDwa4GDTjhTY8DmirJubR1c6o+fCQ=",
         "owner": "ilyamiro",
         "repo": "serpantinum",
-        "rev": "cf3f0d9e2d2c7375994099fb5395728088980201",
+        "rev": "22c04962d4bac8168333db49035442fb26c60d95",
         "type": "github"
       },
       "original": {

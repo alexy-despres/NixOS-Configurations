@@ -13,11 +13,6 @@ in {
         deleted = "";
         stashed = "≡";
       };
-
-      # git_state = {
-      #   format = "([$state( $progress_current/$progress_total)]($style)) ";
-      #   style = "bright-black";
-      # };
     };
   };
 }

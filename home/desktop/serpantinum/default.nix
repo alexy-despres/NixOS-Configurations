@@ -2,6 +2,7 @@
   imports = [
     inputs.serpantinum.homeManagerModules.default
     ./hyprland
+    ./scripts
     ./stylix.nix
   ];
 
@@ -12,7 +13,7 @@
     systemd.enable = true;
 
     settings = {
-      wallpaperDir = "/home/alexy/Wallpapers/Images";
+      wallpaperDir = "/home/alexy/Wallpapers/Extra/shell-wallpapers";
 
       general = {
         language = "en";

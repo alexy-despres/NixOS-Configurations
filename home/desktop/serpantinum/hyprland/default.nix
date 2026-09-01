@@ -48,12 +48,23 @@ in {
     enable = true;
     configType = "hyprlang";
     xwayland.enable = true;
+
     systemd = {
       enable = false;
       variables = [
         "--all"
       ]; # https://wiki.hyprland.org/Nix/Hyprland-on-Home-Manager/#programs-dont-work-in-systemd-services-but-do-on-the-terminal
     };
+
+    extraConfig = ''
+      source = ~/.config/hypr/colors.conf
+
+      general {
+        col.active_border = $mauve
+        col.inactive_border = $surface0
+      }
+    '';
+
     package = null;
     portalPackage = null;
 
@@ -94,8 +105,8 @@ in {
         gaps_out = gaps-out;
         border_size = border-size;
         layout = "master";
-        "col.active_border" = lib.mkForce "rgb(2a2a2a)";
-        "col.inactive_border" = lib.mkForce "rgb(1a1a1a)";
+        # "col.active_border" = lib.mkForce "rgb(2a2a2a)";
+        # "col.inactive_border" = lib.mkForce "rgb(1a1a1a)";
       };
 
       decoration = {
