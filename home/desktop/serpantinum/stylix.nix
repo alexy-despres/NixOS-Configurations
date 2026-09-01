@@ -2,8 +2,8 @@
   stylix = {
     autoEnable = false;
 
-    targets = {
-      kitty.enable = true;
-    };
+    # targets = {
+    #   kitty.enable = true;
+    # };
   };
 }
