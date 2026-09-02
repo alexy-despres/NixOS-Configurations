@@ -105,8 +105,6 @@ in {
         gaps_out = gaps-out;
         border_size = border-size;
         layout = "master";
-        # "col.active_border" = lib.mkForce "rgb(2a2a2a)";
-        # "col.inactive_border" = lib.mkForce "rgb(1a1a1a)";
       };
 
       decoration = {
@@ -144,6 +142,8 @@ in {
 
         # Special workspaces
         "workspace special:communication, match:class discord"
+        "match:class com.anthropic.Claude, fullscreen on"
+        "match:class GitHub Desktop, fullscreen on"
       ];
 
       misc = {

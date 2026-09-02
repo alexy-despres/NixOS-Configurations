@@ -10,7 +10,7 @@
       github = {
         command = "github-desktop";
         class = "github-desktop";
-        size = "75% 60%";
+        size = "100% 100%";
         lazy = true;
       };
       sysmon = {
@@ -41,6 +41,12 @@
         command = "protonvpn-app";
         class = "proton-vpn";
         size = "60% 60%";
+        lazy = true;
+      };
+      claude-desktop = {
+        command = "claude-desktop";
+        class = "claude-desktop";
+        size = "100% 100%";
         lazy = true;
       };
     };

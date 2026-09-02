@@ -24,6 +24,7 @@
         "$mod, M, exec, pypr toggle mail" # Proton mail
         "$mod, V, exec, pypr toggle vpn" # Proton mail
         "$mod, O, exec, pypr toggle notes" # Obsidian
+        "$mod, C, exec, pypr toggle claude-desktop" # Claude desktop
 
         # Windows
         "$mod,Q, killactive," # Close window
