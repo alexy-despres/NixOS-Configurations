@@ -1,6 +1,7 @@
 {
   pkgs,
   pkgs-stable,
+  inputs,
   ...
 }: {
   home.packages = with pkgs-stable; [
@@ -14,5 +15,6 @@
     home-manager
     vscodium
     pkgs.claude-code
+    inputs.claude-desktop.packages.${stdenv.hostPlatform.system}.claude-desktop
   ];
 }
