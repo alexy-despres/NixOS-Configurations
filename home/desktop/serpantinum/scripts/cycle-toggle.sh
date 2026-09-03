@@ -1,0 +1,1 @@
+/nix/store/35g0awsd2xkdy1q78hybrm6cbpf9nckm-home-manager-files/.config/nixos/home/desktop/serpantinum/scripts/cycle-toggle.sh

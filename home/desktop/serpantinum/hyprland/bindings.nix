@@ -1,4 +1,33 @@
 {pkgs, ...}: {
+  home.file.".config/nixos/home/desktop/serpantinum/scripts/cycle-toggle.sh" = {
+    executable = true;
+    text = ''
+      #!/usr/bin/env bash
+      # Cycles through toggles on each press of SUPER+Tab
+
+      STATE_FILE="/tmp/serpantinum_cycle_idx"
+      COMMANDS=(
+        "serpantinum msg toggle music"
+        "serpantinum msg toggle calendar"
+        "serpantinum msg toggle network"
+      )
+
+      # Read current index, default 0
+      if [[ -f "$STATE_FILE" ]]; then
+        idx=$(<"$STATE_FILE")
+      else
+        idx=0
+      fi
+
+      # Run the current command
+      eval "''${COMMANDS[$idx]}"
+
+      # Advance index (wrap around)
+      next=$(( (idx + 1) % ''${#COMMANDS[@]} ))
+      echo "$next" > "$STATE_FILE"
+    '';
+  };
+
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     "$shiftMod" = "SUPER_SHIFT";
@@ -25,6 +54,7 @@
         "$mod, V, exec, pypr toggle vpn" # Proton mail
         "$mod, O, exec, pypr toggle notes" # Obsidian
         "$mod, C, exec, pypr toggle claude-desktop" # Claude desktop
+        "$mod, Tab, exec, ~/.config/nixos/home/desktop/serpantinum/scripts/cycle-toggle.sh" # Bar toggles
 
         # Windows
         "$mod,Q, killactive," # Close window
