@@ -1,10 +1,15 @@
-{config, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   virtualisation = {
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
 
     libvirtd.qemu = {
       swtpm.enable = true; # TPM support
+      vhostUserPackages = with pkgs; [virtiofsd];
     };
   };
 

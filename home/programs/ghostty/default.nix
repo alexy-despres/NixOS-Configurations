@@ -26,6 +26,7 @@ in {
     enableZshIntegration = true;
     settings = {
       config-file = ["config-colors"];
+      # gtk-single-instance = true; # For startup speed
       font-size = 19; # Default size
       window-padding-x = 10;
       confirm-close-surface = false;
